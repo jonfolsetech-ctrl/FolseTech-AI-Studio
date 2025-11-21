@@ -2,12 +2,21 @@
   "name": "folsetech-ai-studio",
   "version": "1.0.0",
   "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
   "dependencies": {
+    "framer-motion": "^7.6.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.3.0",
-    "zustand": "^4.5.0",
-    "framer-motion": "^7.6.0",
-    "wavesurfer.js": "^7.0.0"
+    "wavesurfer.js": "^7.0.0",
+    "zustand": "^4.5.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^5.1.1",
+    "vite": "^7.2.4"
   }
 }
