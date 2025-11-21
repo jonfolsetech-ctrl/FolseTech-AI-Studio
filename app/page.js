@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Header from '@/components/Header'
 import Sidebar from '@/components/Sidebar'
 import AudioRecorder from '@/components/AudioRecorder'
@@ -12,27 +12,34 @@ import MixingMastering from '@/components/MixingMastering'
 
 export default function Home() {
   const [activeView, setActiveView] = useState('record')
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 relative overflow-hidden">
       {/* Floating Musical Notes */}
-      <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
-        {['♪', '♫', '♬', '♩', '♪', '♫', '♬', '♩', '♪', '♫', '♬', '♩'].map((note, i) => (
-          <div
-            key={i}
-            className="absolute text-4xl font-bold animate-float opacity-20"
-            style={{
-              left: `${(i * 8.33)}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${i * 0.5}s`,
-              animationDuration: `${6 + Math.random() * 4}s`,
-              color: i % 3 === 0 ? '#06b6d4' : i % 3 === 1 ? '#a855f7' : '#ec4899'
-            }}
-          >
-            {note}
-          </div>
-        ))}
-      </div>
+      {mounted && (
+        <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
+          {['♪', '♫', '♬', '♩', '♪', '♫', '♬', '♩', '♪', '♫', '♬', '♩'].map((note, i) => (
+            <div
+              key={i}
+              className="absolute text-4xl font-bold animate-float opacity-20"
+              style={{
+                left: `${(i * 8.33)}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${i * 0.5}s`,
+                animationDuration: `${6 + Math.random() * 4}s`,
+                color: i % 3 === 0 ? '#06b6d4' : i % 3 === 1 ? '#a855f7' : '#ec4899'
+              }}
+            >
+              {note}
+            </div>
+          ))}
+        </div>
+      )}
 
       {/* Enhanced Animated Background */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
@@ -55,21 +62,23 @@ export default function Home() {
       </div>
 
       {/* Digital rain effect */}
-      <div className="fixed inset-0 pointer-events-none overflow-hidden opacity-10">
-        {[...Array(10)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute text-cyan-400 text-xs font-mono animate-digital-rain"
-            style={{
-              left: `${i * 10}%`,
-              animationDelay: `${i * 0.5}s`,
-              animationDuration: `${3 + Math.random() * 2}s`
-            }}
-          >
-            {Array.from({length: 20}, () => Math.random().toString(36)[2]).join('')}
-          </div>
-        ))}
-      </div>
+      {mounted && (
+        <div className="fixed inset-0 pointer-events-none overflow-hidden opacity-10">
+          {[...Array(10)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute text-cyan-400 text-xs font-mono animate-digital-rain"
+              style={{
+                left: `${i * 10}%`,
+                animationDelay: `${i * 0.5}s`,
+                animationDuration: `${3 + Math.random() * 2}s`
+              }}
+            >
+              {Array.from({length: 20}, () => Math.random().toString(36)[2]).join('')}
+            </div>
+          ))}
+        </div>
+      )}
       
       <div className="relative z-10">
         <Header />
