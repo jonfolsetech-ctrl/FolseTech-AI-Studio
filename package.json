@@ -2,11 +2,15 @@
   "name": "folsetech-ai-studio",
   "version": "1.0.0",
   "private": true,
+  "description": "Professional AI-powered audio production platform",
+  "author": "Folsetech",
+  "license": "MIT",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "export": "next build && next export"
   },
   "dependencies": {
     "react": "^18.2.0",
