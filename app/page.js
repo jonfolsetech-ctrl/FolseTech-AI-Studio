@@ -83,15 +83,15 @@ export default function Home() {
       <div className="relative z-10">
         <Header />
         
-        <div className="flex">
+        <div className="flex flex-col md:flex-row">
           <Sidebar activeView={activeView} setActiveView={setActiveView} />
           
-          <main className="flex-1 p-6 lg:p-8">
-            <div className="max-w-7xl mx-auto space-y-6">
+          <main className="flex-1 p-4 sm:p-6 lg:p-8 w-full overflow-x-hidden">
+            <div className="max-w-7xl mx-auto space-y-4 sm:space-y-6">
               {/* Main Content Grid */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
                 {/* Audio Studio Section */}
-                <section className="bg-slate-900/50 backdrop-blur-xl border border-slate-800/50 rounded-2xl p-6 shadow-2xl hover:border-cyan-500/30 transition-all">
+                <section className="bg-slate-900/50 backdrop-blur-xl border border-slate-800/50 rounded-2xl p-4 sm:p-6 shadow-2xl hover:border-cyan-500/30 transition-all">
                   <div className="flex items-center gap-3 mb-6">
                     <div className="relative">
                       <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl blur-md opacity-50"></div>
@@ -107,18 +107,18 @@ export default function Home() {
                 </section>
                 
                 {/* AI Chat Section */}
-                <section className="bg-slate-900/50 backdrop-blur-xl border border-slate-800/50 rounded-2xl p-6 shadow-2xl hover:border-purple-500/30 transition-all">
+                <section className="bg-slate-900/50 backdrop-blur-xl border border-slate-800/50 rounded-2xl p-4 sm:p-6 shadow-2xl hover:border-purple-500/30 transition-all">
                   <ChatPanel />
                 </section>
               </div>
               
               {/* Beat Generator Section */}
-              <section className="bg-slate-900/50 backdrop-blur-xl border border-slate-800/50 rounded-2xl p-6 shadow-2xl hover:border-pink-500/30 transition-all">
+              <section className="bg-slate-900/50 backdrop-blur-xl border border-slate-800/50 rounded-2xl p-4 sm:p-6 shadow-2xl hover:border-pink-500/30 transition-all">
                 <BeatGenerator />
               </section>
               
               {/* File Manager Section */}
-              <section className="bg-slate-900/50 backdrop-blur-xl border border-slate-800/50 rounded-2xl p-6 shadow-2xl hover:border-green-500/30 transition-all">
+              <section className="bg-slate-900/50 backdrop-blur-xl border border-slate-800/50 rounded-2xl p-4 sm:p-6 shadow-2xl hover:border-green-500/30 transition-all">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="relative">
                     <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl blur-md opacity-50"></div>
@@ -134,14 +134,14 @@ export default function Home() {
               </section>
               
               {/* Voice Cloning & Mixing/Mastering Grid */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
                 {/* Voice Cloning Section */}
-                <section className="bg-slate-900/50 backdrop-blur-xl border border-slate-800/50 rounded-2xl p-6 shadow-2xl hover:border-purple-500/30 transition-all">
+                <section className="bg-slate-900/50 backdrop-blur-xl border border-slate-800/50 rounded-2xl p-4 sm:p-6 shadow-2xl hover:border-purple-500/30 transition-all">
                   <VoiceCloning />
                 </section>
                 
                 {/* Mixing & Mastering Section */}
-                <section className="bg-slate-900/50 backdrop-blur-xl border border-slate-800/50 rounded-2xl p-6 shadow-2xl hover:border-cyan-500/30 transition-all">
+                <section className="bg-slate-900/50 backdrop-blur-xl border border-slate-800/50 rounded-2xl p-4 sm:p-6 shadow-2xl hover:border-cyan-500/30 transition-all">
                   <MixingMastering />
                 </section>
               </div>

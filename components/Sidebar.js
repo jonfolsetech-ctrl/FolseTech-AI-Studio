@@ -12,8 +12,8 @@ export default function Sidebar({ activeView, setActiveView }) {
   ]
 
   return (
-    <aside className="w-20 lg:w-64 bg-slate-900/50 backdrop-blur-xl border-r border-slate-800/50 min-h-[calc(100vh-73px)]">
-      <div className="p-4 space-y-2">
+    <aside className="hidden sm:block sm:w-16 lg:w-64 bg-slate-900/50 backdrop-blur-xl border-r border-slate-800/50 min-h-[calc(100vh-73px)]">
+      <div className="p-2 sm:p-4 space-y-2">
         {menuItems.map((item) => {
           const Icon = item.icon
           const isActive = activeView === item.id
@@ -22,7 +22,7 @@ export default function Sidebar({ activeView, setActiveView }) {
             <button
               key={item.id}
               onClick={() => setActiveView(item.id)}
-              className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all group ${
+              className={`w-full flex items-center gap-2 sm:gap-3 px-2 sm:px-4 py-2 sm:py-3 rounded-lg sm:rounded-xl transition-all group ${
                 isActive
                   ? `bg-gradient-to-r ${item.color} text-white shadow-lg`
                   : 'text-slate-400 hover:text-white hover:bg-slate-800/50'
